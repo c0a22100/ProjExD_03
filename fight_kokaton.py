@@ -140,19 +140,20 @@ class Beam:
         self.rct.move_ip(self.vx, self.vy+random.randint(-10,10))
         screen.blit(self.img, self.rct)
 
-
+# ""
 # 追加課題1（爆発エフェクト）
-class Explosion:
-    def __init__(self, life):
-        self.img_xpl = [
-            pg.transform.flip(pg.image.load("ex03/fig/explosion.gif"), True, True),
-            pg.transform.flip(pg.image.load("ex03/fig/explosion.gif"), True, False),
-            pg.transform.flip(pg.image.load("ex03/fig/explosion.gif"), False, True),
-            pg.transform.flip(pg.image.load("ex03/fig/explosion.gif"), False, False),
-        ]
-        Bomb.rct.move_ip(self.vx, self.vy)
-        pg.Surface.blit(self.img_xpl[1], )
-        self.life = life        
+# ""
+# class Explosion:
+#     def __init__(self, life):
+#         self.img_xpl = [
+#             pg.transform.flip(pg.image.load("ex03/fig/explosion.gif"), True, True),
+#             pg.transform.flip(pg.image.load("ex03/fig/explosion.gif"), True, False),
+#             pg.transform.flip(pg.image.load("ex03/fig/explosion.gif"), False, True),
+#             pg.transform.flip(pg.image.load("ex03/fig/explosion.gif"), False, False),
+#         ]
+#         Bomb.rct.move_ip(self.vx, self.vy)
+#         pg.Surface.blit(self.img_xpl[1], )
+#         self.life = life        
 
 
 def main():
@@ -188,8 +189,6 @@ def main():
                 if bomb.rct.colliderect(beam.rct):
                     bombs[i] = None
                     beam = None
-                    # 追加課題1
-                    explosion = Explosion(5)
                     bird.change_img(6, screen)
                     pg.display.update()              
 
